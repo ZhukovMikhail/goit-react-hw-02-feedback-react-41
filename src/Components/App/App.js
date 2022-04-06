@@ -11,7 +11,7 @@ class App extends Component {
     bad: 0,
   };
   allButtons = Object.keys(this.state);
-  statisticsValues = {};
+  statData = {};
   handleClick = e => {
     const { name } = e.target;
     this.setState(prevState => ({
@@ -29,7 +29,7 @@ class App extends Component {
     if (Number.isNaN(positiveAverage)) {
       positiveAverage = 0;
     }
-    this.statisticsValues = {
+    this.statData = {
       ...this.state,
       ...{ total: totalFeddbacks, positive: positiveAverage },
     };
@@ -40,7 +40,7 @@ class App extends Component {
         <TitleStat value={positiveAverage}>
           Statstics
           {totalFeddbacks !== 0 ? (
-            <Statistics data={this.statisticsValues}></Statistics>
+            <Statistics data={this.statData}></Statistics>
           ) : (
             <StyleNoStats>No feedback given</StyleNoStats>
           )}
