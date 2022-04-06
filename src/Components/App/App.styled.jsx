@@ -24,18 +24,19 @@ export const TitleStat = styled.div`
   font-size: 23px;
   font-weight: 700;
   width: 100%;
-  color: ${({ value, theme }) => {
-    if (value >= 75) {
-      return theme.green;
-    }
-    if (value < 75 && value > 45) {
+  color: ${({ value, theme, total }) => {
+    if (total === 0) {
       return theme.grey;
-    }
-    if (value <= 45 && value > 0) {
-      return theme.red;
-    }
-    if (value === 0) {
-      return theme.grey;
+    } else {
+      if (value >= 75) {
+        return theme.green;
+      }
+      if (value < 75 && value > 45 && total !== 0) {
+        return theme.grey;
+      }
+      if (value <= 45 && value > 0 && total !== 0) {
+        return theme.red;
+      }
     }
   }};
 `;

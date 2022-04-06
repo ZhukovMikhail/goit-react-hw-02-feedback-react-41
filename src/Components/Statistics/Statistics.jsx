@@ -16,7 +16,7 @@ export const Statistics = ({ data }) => {
       </p>
       <p>
         Positive feedback:
-        <span>{isNaN(data.positive) ? 0 : data.positive}% </span>
+        <span>{Number(data.positive.toFixed(1))}% </span>
       </p>
     </StyledStat>
   );

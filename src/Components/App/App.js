@@ -23,21 +23,21 @@ class App extends Component {
     const totalFeddbacks = values.reduce((acc, value) => {
       return acc + value;
     }, 0);
-    let positiveAverage = Number(
-      ((this.state.good / totalFeddbacks) * 100).toFixed(2),
-    );
-    if (Number.isNaN(positiveAverage)) {
-      positiveAverage = 0;
-    }
+
+    const positiveAverage =
+      ((this.state.good + 0.0000001) / (totalFeddbacks + 0.0000001)) * 100;
+
     this.statData = {
       ...this.state,
       ...{ total: totalFeddbacks, positive: positiveAverage },
     };
+    console.log(positiveAverage);
+    console.log(this.statData);
     return (
       <Container>
         <Title>Plaese leave feedback</Title>
         <Buttons buttons={this.allButtons} onClick={this.handleClick}></Buttons>
-        <TitleStat value={positiveAverage}>
+        <TitleStat value={positiveAverage} total={totalFeddbacks}>
           Statstics:
           {totalFeddbacks !== 0 ? (
             <Statistics data={this.statData}></Statistics>

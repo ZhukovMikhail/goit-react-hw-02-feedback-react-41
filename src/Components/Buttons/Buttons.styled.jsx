@@ -13,7 +13,8 @@ export const StyledBtn = styled.button`
   border-radius: 4px;
   width: 75px;
   color: white;
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 4px 3px 4px 1px rgba(155, 155, 155, 0.75);
   }
   background-color: ${props => {
