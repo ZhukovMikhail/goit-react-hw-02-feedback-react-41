@@ -38,7 +38,7 @@ class App extends Component {
         <Title>Plaese leave feedback</Title>
         <Buttons buttons={this.allButtons} onClick={this.handleClick}></Buttons>
         <TitleStat value={positiveAverage}>
-          Statstics
+          Statstics:
           {totalFeddbacks !== 0 ? (
             <Statistics data={this.statData}></Statistics>
           ) : (
