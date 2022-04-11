@@ -1,4 +1,5 @@
 import { StyledStat } from './Statistics.styled';
+import PropTypes from 'prop-types';
 export const Statistics = ({ data }) => {
   return (
     <StyledStat>
@@ -20,4 +21,8 @@ export const Statistics = ({ data }) => {
       </p>
     </StyledStat>
   );
+};
+
+Statistics.propTypes = {
+  data: PropTypes.object,
 };

@@ -1,4 +1,5 @@
 import { StyledWraper, StyledBtn } from './Buttons.styled';
+import PropTypes from 'prop-types';
 export const Buttons = ({ buttons, onClick }) => {
   return (
     <StyledWraper>
@@ -11,4 +12,7 @@ export const Buttons = ({ buttons, onClick }) => {
       })}
     </StyledWraper>
   );
+};
+Buttons.propTypes = {
+  buttons: PropTypes.array,
 };

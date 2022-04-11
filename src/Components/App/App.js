@@ -25,14 +25,14 @@ class App extends Component {
     }, 0);
 
     const positiveAverage =
-      ((this.state.good + 0.0000001) / (totalFeddbacks + 0.0000001)) * 100;
+      ((this.state.good + 0.001) / (totalFeddbacks + 0.001)) * 100;
 
     this.statData = {
       ...this.state,
       ...{ total: totalFeddbacks, positive: positiveAverage },
     };
-    console.log(positiveAverage);
-    console.log(this.statData);
+    // console.log(positiveAverage);
+    // console.log(this.statData);
     return (
       <Container>
         <Title>Plaese leave feedback</Title>
